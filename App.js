@@ -1,7 +1,16 @@
 import { View, Text } from "react-native";
+import TodoManager from'./MuiTodoApp/src/services/todoManager';
+import context from "./MuiTodoApp/src/core/context";
+import { useState } from "react";
+import updateContext from '@laufire/resist';
 
 export default function App() {
-  return (
+  console.log(TodoManager.hasInput({state:{input:""}}));
+  console.log(context);
+  const [state, setState] = useState(context.seed);
+  updateContext(context, { state, setState });
+
+  return ( 
     <View
       style={{
         flex: 1,
@@ -9,7 +18,9 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text>Universal React with Expo</Text>
+    
+      <Text
+      onPress={()=>context.actions.setInput("hi")}>Universal React with Expo</Text>
     </View>
   );
 }
