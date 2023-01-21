@@ -1,0 +1,3 @@
+[submodule "MuiTodoApp"]
+	path = MuiTodoApp
+	url = git@github.com:NPriyadarsini/MuiTodoApp.git
