@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { Surface, Text } from 'react-native-paper'
+import TodoPane from './todoPane/index'
 
 const TodoPaneFrame = (context) =>
 	
@@ -9,6 +10,7 @@ const TodoPaneFrame = (context) =>
 		elevation={ 1 }
 	>
 		<Text  variant="headlineMedium">TodoPane</Text>
+    <TodoPane {...context}/>
 	</Surface>;
 export default TodoPaneFrame;
 
