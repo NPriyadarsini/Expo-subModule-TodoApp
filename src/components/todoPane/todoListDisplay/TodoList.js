@@ -1,4 +1,4 @@
-import TodoManager from '../../../services/TodoManager';
+import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
 import { React } from 'react';
 import Todo from './Todo';
 
