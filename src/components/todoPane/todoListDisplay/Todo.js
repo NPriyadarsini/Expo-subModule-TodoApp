@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { List, Text } from 'react-native-paper';
+import TodoCheckBox from './TodoCheckBox'
 
 const Todo = (context) => {
 	const { actions, data } = context;
@@ -12,7 +13,7 @@ const Todo = (context) => {
     role="todo"
     title={<Text variant="bodySmall">{todo}</Text>}
     onPress={ () => actions.setEditing()}
-    left={() => <List.Icon icon="star" />}/>
+    left={() => <TodoCheckBox {...context}/>} />
 	);
 };
 
