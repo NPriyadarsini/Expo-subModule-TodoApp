@@ -1,6 +1,5 @@
-import { TextInput } from "react-native-paper";
+import { TextInput } from 'react-native-paper';
 import * as React from 'react';
-import { peek } from "@laufire/utils/debug";
 
 const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
@@ -11,7 +10,7 @@ const actionKeys = {
 };
 
 const Input = (context) => {
-	const { state ,actions} = context;
+	const { state, actions } = context;
 
 	return (
 		<TextInput
@@ -19,11 +18,12 @@ const Input = (context) => {
 			role="input"
 			type="text"
 			value={ state.input }
-			onChange={ (evt) =>
-				actions.setInput(evt.target.value) }
+			onChangeText={ (text) => {
+				actions.setInput(text);
+			} }
 			onKeyPress={ (evt) => {
-				actionKeys[peek(evt.code)] && actionKeys[evt.code](context);
-				} }
+				actionKeys[evt.code] && actionKeys[evt.code](context);
+			} }
 		/>
 	);
 };

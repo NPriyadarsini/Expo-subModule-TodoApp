@@ -1,19 +1,22 @@
-import TodoManager from'./MuiTodoApp/src/services/todoManager';
-import context from "./MuiTodoApp/src/core/context";
-import { useState } from "react";
+/* eslint-disable no-console */
+import { React, useState } from 'react';
+import context from './MuiTodoApp/src/core/context';
 import updateContext from '@laufire/resist';
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import HomeScreen from "./src/components/index"
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import HomeScreen from './src/components/index';
 
-export default function App() {
-  console.log(TodoManager.hasInput({state:{input:""}}));
-  console.log(context);
-  const [state, setState] = useState(context.seed);
-  updateContext(context, { state, setState });
+const App = () => {
+	// console.log(TodoManager.hasInput({ state: { input: '' }}));
+	// console.log(context);
+	const [state, setState] = useState(context.seed);
 
-  return    (
-    <SafeAreaProvider>
-    <HomeScreen {...context}/>
-  </SafeAreaProvider>
-  )
-}
+	updateContext(context, { state, setState });
+
+	return (
+		<SafeAreaProvider>
+			<HomeScreen { ...context }/>
+		</SafeAreaProvider>
+	);
+};
+
+export default App;
