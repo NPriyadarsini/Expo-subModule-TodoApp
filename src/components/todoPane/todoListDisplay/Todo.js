@@ -1,19 +1,19 @@
 import { React } from 'react';
 import { List, Text } from 'react-native-paper';
-import TodoCheckBox from './TodoCheckBox'
+import TodoCheckBox from './TodoCheckBox';
 
 const Todo = (context) => {
 	const { actions, data } = context;
-	const {id,todo } = data;
-  console.log(todo);
+	const { id, todo } = data;
 
 	return (
-		<List.Item 
-    key={id}
-    role="todo"
-    title={<Text variant="bodySmall">{todo}</Text>}
-    onPress={ () => actions.setEditing()}
-    left={() => <TodoCheckBox {...context}/>} />
+		<List.Item
+			key={ id }
+			role="todo"
+			title={ <Text variant="bodySmall">{todo}</Text> }
+			onPress={ () => actions.setEditing() }
+			left={ () => { <TodoCheckBox key={ id } { ...context }/>; } }
+		/>
 	);
 };
 

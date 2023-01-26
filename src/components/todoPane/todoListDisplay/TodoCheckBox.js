@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Checkbox } from 'react-native-paper';
 
 const CheckBox = (context) => {
-	const { data } = context;
+	const { data, actions } = context;
 	const { completed } = data;
 
 	return (
@@ -10,9 +10,9 @@ const CheckBox = (context) => {
 			role="toggleTodo"
 			type="checkbox"
 			size="small"
-			status={ completed ? "checked": "unchecked" }
-			onPress={ () => 
-				context.actions.toggleTodo(data) }
+			status={ completed ? 'checked' : 'unchecked' }
+			onPress={ () =>
+				actions.toggleTodo(data) }
 		/>);
 };
 
