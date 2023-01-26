@@ -1,15 +1,16 @@
-import { TextInput } from 'react-native-paper';
 import React from 'react';
+import { TextInput } from 'react-native';
+import context from '../../../../MuiTodoApp/src/core/context';
 
-const getEnterKeyAction = (context) =>
+const getEnterKeyAction = () =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
 
 const actionKeys = {
-	Enter: (context) => context.actions[getEnterKeyAction(context)](context),
-	Escape: (context) => context.actions.setInput(''),
+	Enter: () => context.actions[getEnterKeyAction(context)](context),
+	Escape: () => context.actions.setInput(''),
 };
 
-const Input = (context) => {
+const Input = () => {
 	const { state, actions } = context;
 
 	return (
@@ -18,8 +19,11 @@ const Input = (context) => {
 			role="input"
 			type="text"
 			value={ state.input }
-			onChange={ (evt) =>
-				actions.setInput(evt.target.value) }
+			onChangeText={ (text) => {
+				// eslint-disable-next-line no-console
+				console.log(text);
+				return actions.setInput(text);
+			} }
 			onKeyPress={ (evt) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
 			} }

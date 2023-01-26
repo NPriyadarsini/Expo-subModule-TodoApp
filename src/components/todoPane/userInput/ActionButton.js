@@ -1,8 +1,8 @@
 import AddButton from './AddButton.js';
-
+import EditButton from './EditButton';
 
 const ActionButton = (context) => (context.state.editing
-	? editButton(context)
+	? EditButton(context)
 	: AddButton(context));
 
 export default ActionButton;

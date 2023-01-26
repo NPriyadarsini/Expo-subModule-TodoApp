@@ -4,7 +4,7 @@ import ActionButton from './ActionButton.js';
 import Input from './Input.js';
 
 const UserInputs = (context) =>
-	<Surface>
+	<Surface style={ { height: 100 } }>
 		<Input { ...context }/>
 		<ActionButton { ...context }/>
 	</Surface>;

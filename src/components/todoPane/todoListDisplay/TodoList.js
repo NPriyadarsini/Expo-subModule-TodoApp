@@ -12,7 +12,8 @@ const TodoList = (context) => {
 
 	return noTodos
 		? []
-		: filteredTodo.map((todo,id) => <Todo key={id} {...{ ...context, data: todo }}/>);
+		: filteredTodo.map((todo, id) =>
+			<Todo key={ id } { ...{ ...context, data: todo } }/>);
 };
 
 export default TodoList;

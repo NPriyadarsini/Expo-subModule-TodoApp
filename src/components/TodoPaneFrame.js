@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
 import { Surface, Text } from 'react-native-paper';
 import TodoPane from './todoPane/index';
+import context from '../../MuiTodoApp/src/core/context';
 
-const TodoPaneFrame = (context) =>
+const TodoPaneFrame = () =>
 
 	<Surface
-		style={ styles.surface }
 		elevation={ 1 }
 	>
 		<Text variant="headlineMedium">TodoPane</Text>
@@ -14,12 +13,3 @@ const TodoPaneFrame = (context) =>
 	</Surface>;
 
 export default TodoPaneFrame;
-
-const styles = StyleSheet.create({
-	surface: {
-		padding: 1,
-		height: '99%',
-		width: '100%',
-		alignItems: 'center',
-	},
-});
