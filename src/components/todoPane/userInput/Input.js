@@ -1,5 +1,5 @@
 import { TextInput } from 'react-native-paper';
-import * as React from 'react';
+import React from 'react';
 
 const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
@@ -18,9 +18,8 @@ const Input = (context) => {
 			role="input"
 			type="text"
 			value={ state.input }
-			onChangeText={ (text) => {
-				actions.setInput(text);
-			} }
+			onChange={ (evt) =>
+				actions.setInput(evt.target.value) }
 			onKeyPress={ (evt) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
 			} }
