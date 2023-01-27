@@ -6,8 +6,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import HomeScreen from './src/components/index';
 
 const App = () => {
-	// console.log(TodoManager.hasInput({ state: { input: '' }}));
-	// console.log(context);
 	const [state, setState] = useState(context.seed);
 
 	updateContext(context, { state, setState });

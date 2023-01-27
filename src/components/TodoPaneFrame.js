@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { Surface, Text } from 'react-native-paper';
 import TodoPane from './todoPane/index';
 import context from '../../MuiTodoApp/src/core/context';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Text } from 'react-native-paper';
 
 const TodoPaneFrame = () =>
 
-	<Surface
-		elevation={ 1 }
-	>
-		<Text variant="headlineMedium">TodoPane</Text>
+	<SafeAreaView>
+		<Text
+			variant="titleLarge"
+			style={ { textAlign: 'center' } }
+		>
+			TODOS
+		</Text>
 		<TodoPane { ...context }/>
-	</Surface>;
+	</SafeAreaView>;
 
 export default TodoPaneFrame;
