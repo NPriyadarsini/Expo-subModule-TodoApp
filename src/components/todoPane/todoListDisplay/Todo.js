@@ -11,8 +11,8 @@ const Todo = (context) => {
 			key={ id }
 			role="todo"
 			title={ <Text variant="bodySmall">{todo}</Text> }
-			onPress={ () => actions.setEditing() }
-			left={ () => { <TodoCheckBox key={ id } { ...context }/>; } }
+			onPress={ () => actions.setEditing(data) }
+			left={ () => TodoCheckBox(context) }
 		/>
 	);
 };

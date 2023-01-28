@@ -1,8 +1,8 @@
 import { React } from 'react';
-import { IconButton } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 
 const AddButton = ({ actions }) =>
-	<IconButton
+	<TextInput.Icon
 		icon="plus"
 		role="addButton"
 		onPress={ () => actions.addTodo() }
