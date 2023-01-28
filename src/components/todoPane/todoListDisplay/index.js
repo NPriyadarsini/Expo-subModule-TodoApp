@@ -1,16 +1,25 @@
 import { React } from 'react';
-import { List } from 'react-native-paper';
+import { ScrollView } from 'react-native';
+import { DataTable } from 'react-native-paper';
+import ClearCompleted from './ClearCompleted.js';
 import FilterBar from './FilterBar.js';
 import TodoList from './TodoList.js';
 import ToggleAllCheckbox from './ToggleAllCheckBox.js';
 
 const TodoListDisplay = (context) =>
-	<List.Section className="todoList" role="TodoListDisplay">
-		<List.Subheader>
-			<ToggleAllCheckbox { ...context }/>
-			<FilterBar { ...context }/>
-		</List.Subheader>
-		<TodoList { ...context }/>
-	</List.Section>;
+	<ScrollView>
+		<DataTable>
+			<DataTable.Header>
+				<DataTable.Cell>
+					<FilterBar { ...context }/>
+				</DataTable.Cell>
+			</DataTable.Header>
+			<DataTable.Row>
+				<ToggleAllCheckbox { ...context }/>
+				<ClearCompleted { ...context }/>
+			</DataTable.Row>
+			<TodoList { ...context }/>
+		</DataTable>
+	</ScrollView>;
 
 export default TodoListDisplay;

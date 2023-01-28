@@ -1,5 +1,6 @@
 import { React } from 'react';
-import { List, Text } from 'react-native-paper';
+import { DataTable } from 'react-native-paper';
+import RemoveButton from './RemoveButton';
 import TodoCheckBox from './TodoCheckBox';
 
 const Todo = (context) => {
@@ -7,13 +8,20 @@ const Todo = (context) => {
 	const { id, todo } = data;
 
 	return (
-		<List.Item
+		<DataTable.Row
 			key={ id }
-			role="todo"
-			title={ <Text variant="bodySmall">{todo}</Text> }
-			onPress={ () => actions.setEditing(data) }
-			left={ () => TodoCheckBox(context) }
-		/>
+			style={ { height: 60 } }
+		>
+			<DataTable.Cell style={ { flex: 0.3 } }>
+				<TodoCheckBox { ...context }/>
+			</DataTable.Cell>
+			<DataTable.Cell onPress={ () => actions.setEditing(data) }>
+				{todo}
+			</DataTable.Cell>
+			<DataTable.Cell style={ { flex: 0.3 } }>
+				<RemoveButton { ...context }/>
+			</DataTable.Cell>
+		</DataTable.Row>
 	);
 };
 
