@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Checkbox } from 'react-native-paper';
 import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
 
-const ToggleAllCheckBox = (context) => {
+const ToggleAllCheckbox = (context) => {
 	const { actions } = context;
 	const selectAll = TodoManager.isAllChecked(context);
 	const noTodos = TodoManager.hasNoTodos(context);
@@ -18,4 +18,4 @@ const ToggleAllCheckBox = (context) => {
 	);
 };
 
-export default ToggleAllCheckBox;
+export default ToggleAllCheckbox;

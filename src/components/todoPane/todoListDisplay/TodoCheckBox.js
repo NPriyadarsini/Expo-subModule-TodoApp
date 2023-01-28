@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Checkbox } from 'react-native-paper';
 
-const CheckBox = (context) => {
+const TodoCheckBox = (context) => {
 	const { data, actions } = context;
 	const { completed } = data;
 
@@ -16,4 +16,4 @@ const CheckBox = (context) => {
 		/>);
 };
 
-export default CheckBox;
+export default TodoCheckBox;
