@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
+import TaskPaneFrame from './TaskPaneFrame';
 import TodoPaneFrame from './TodoPaneFrame';
 
 const TodoPaneTab = () => <TodoPaneFrame/>;
 
-const TaskPaneTab = () => <Text>TaskPane</Text>;
+const TaskPaneTab = () => <TaskPaneFrame/>;
 
 const HomeScreen = (context) => {
 	const { state: { index }, config, actions } = context;
