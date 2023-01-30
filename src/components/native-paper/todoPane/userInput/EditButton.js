@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { TextInput } from 'react-native-paper';
-import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
+import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
 
 const EditButton = (context) => {
 	const { actions } = context;

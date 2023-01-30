@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { SegmentedButtons } from 'react-native-paper';
-import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
+import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
 
 const FilterBar = (context) => {
 	const { config, state: { filter }, actions } = context;

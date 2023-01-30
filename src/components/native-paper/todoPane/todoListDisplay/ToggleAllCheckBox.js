@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { Checkbox } from 'react-native-paper';
-import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
+import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
 
 const ToggleAllCheckbox = (context) => {
 	const { actions } = context;

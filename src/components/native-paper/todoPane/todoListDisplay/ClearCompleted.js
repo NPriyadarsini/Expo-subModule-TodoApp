@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { Button } from 'react-native-paper';
-import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
+import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
 
 const ClearCompleted = (context) => {
 	const { actions } = context;
