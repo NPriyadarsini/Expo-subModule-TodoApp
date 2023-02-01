@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
 });
 
 const TodoPaneTab = () =>
-	<Box style={ { flex: 1, backgroundColor: '#ff4081' } }>
+	<Box style={ { flex: 1, backgroundColor: '#15d1c5' } }>
 		<TodoPane/>
 	</Box>;
 
 const TaskPaneTab = () =>
-	<Box style={ { flex: 1, backgroundColor: '#673ab7' } }/>;
+	<Box style={ { flex: 1, backgroundColor: '#af87f5' } }/>;
 
 const HomeScreen = (context) => {
 	const { state: { index }, config, actions } = context;
