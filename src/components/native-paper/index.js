@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BottomNavigation } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import TaskPaneFrame from './TaskPaneFrame';
 import TodoPaneFrame from './TodoPaneFrame';
 
@@ -17,11 +18,13 @@ const HomeScreen = (context) => {
 	});
 
 	return (
-		<BottomNavigation
-			navigationState={ { index, routes } }
-			onIndexChange={ (value) => actions.setIndex(value) }
-			renderScene={ renderScene }
-		/>
+		<SafeAreaProvider>
+			<BottomNavigation
+				navigationState={ { index, routes } }
+				onIndexChange={ (value) => actions.setIndex(value) }
+				renderScene={ renderScene }
+			/>
+		</SafeAreaProvider>
 	);
 };
 

@@ -1,19 +1,10 @@
-/* eslint-disable no-console */
-import { React, useEffect } from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import HomeScreen from './components/native-paper';
-import TaskManager from '../MuiTodoApp/src/services/taskManager';
-import Ticker from '../MuiTodoApp/src/services/ticker';
+import { React } from 'react';
+import HomeScreen from './components/native-base';
+import { NativeBaseProvider } from 'native-base';
 
-const App = (context) => {
-	useEffect(() => TaskManager.init(context), []);
-	useEffect(() => Ticker.start(context), []);
-
-	return (
-		<SafeAreaProvider>
-			<HomeScreen { ...context }/>
-		</SafeAreaProvider>
-	);
-};
+const App = (context) =>
+	<NativeBaseProvider>
+		<HomeScreen { ...context }/>
+	</NativeBaseProvider>;
 
 export default App;
