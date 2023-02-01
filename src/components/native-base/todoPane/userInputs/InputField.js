@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Input } from 'native-base';
+import { Input } from 'native-base';
+import AddButton from './AddButton';
 
 const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
@@ -21,11 +22,7 @@ const InputField = (context) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
 			} }
 			InputRightElement={
-				<Button
-					bgColor="blue.500"
-				>
-					Save
-				</Button>
+				<AddButton { ...context }/>
 			}
 		/>
 	);
