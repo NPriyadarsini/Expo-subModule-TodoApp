@@ -1,8 +1,15 @@
-import { Box } from 'native-base';
+import { Center, VStack } from 'native-base';
 import { React } from 'react';
-import context from '../../../../MuiTodoApp/src/core/context';
-import InputField from './userInputs/InputField';
+import TodoListDisplay from './todoListDisplay';
+import UserInputs from './userInputs';
 
-const TodoPane = () => <Box><InputField { ...context }/></Box>;
+const TodoPane = (context) => <VStack>
+	<Center>
+		<UserInputs { ...context }/>
+	</Center>
+	<Center>
+		<TodoListDisplay { ...context }/>
+	</Center>
+</VStack>;
 
 export default TodoPane;

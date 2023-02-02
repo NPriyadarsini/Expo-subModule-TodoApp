@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import * as React from 'react';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import { Dimensions, StatusBar, StyleSheet } from 'react-native';
@@ -13,18 +14,19 @@ const styles = StyleSheet.create({
 	},
 });
 
-const TodoPaneTab = () =>
-	<Box style={ { flex: 1, backgroundColor: '#15d1c5' } }>
-		<TodoPane/>
-	</Box>;
-
-const TaskPaneTab = () =>
-	<Box style={ { flex: 1, backgroundColor: '#af87f5' } }/>;
-
 const HomeScreen = (context) => {
 	const { state: { index }, config, actions } = context;
 	const routes = config.tabs;
 
+	// eslint-disable-next-line react/no-unstable-nested-components
+	const TodoPaneTab = () =>
+		<Box key={ index } style={ { flex: 1, backgroundColor: '#15d1c5' } }>
+			<TodoPane { ...context }/>
+		</Box>;
+
+	// eslint-disable-next-line react/no-unstable-nested-components
+	const TaskPaneTab = () =>
+		<Box style={ { flex: 1, backgroundColor: '#af87f5' } }/>;
 	const renderScene = SceneMap({
 		TodoPane: TodoPaneTab,
 		TaskPane: TaskPaneTab,
