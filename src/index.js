@@ -8,7 +8,8 @@ const Entry = () => {
 	const [state, setState] = useState(context.seed);
 
 	updateContext(context, { state, setState });
-
+	// eslint-disable-next-line no-console
+	console.log(context);
 	return <App { ...context }/>;
 };
 

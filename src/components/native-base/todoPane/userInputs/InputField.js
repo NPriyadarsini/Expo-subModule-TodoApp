@@ -11,12 +11,13 @@ const actionKeys = {
 };
 
 const InputField = (context) => {
-	const { actions } = context;
+	const { state, actions } = context;
 
 	return (
 		<Input
 			placeholder="Enter The Task"
 			variant="rounded"
+			value={ state.input }
 			onChangeText={ (text) => actions.setInput(text) }
 			onKeyPress={ (evt) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
