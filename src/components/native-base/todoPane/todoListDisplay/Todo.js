@@ -1,18 +1,20 @@
-import { Pressable, Text } from 'native-base';
+import { HStack, Pressable, Text } from 'native-base';
 import { React } from 'react';
+import TodoCheckBox from './TodoCheckBox';
 
 const Todo = (context) => {
 	const { data, actions } = context;
 	const { id, todo } = data;
 
 	return (
-		<Pressable
-			key={ id }
-			py="4"
-			onPress={ () => actions.setEditing(data) }
-		>
-			<Text>{todo}</Text>
-		</Pressable>
+		<HStack key={ id } py="4">
+			<TodoCheckBox { ...context }/>
+			<Pressable
+				onPress={ () => actions.setEditing(data) }
+			>
+				<Text ml="5">{todo}</Text>
+			</Pressable>
+		</HStack>
 	);
 };
 

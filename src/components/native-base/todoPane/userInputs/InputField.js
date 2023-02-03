@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input } from 'native-base';
 import ActionButton from './ActionButton';
+import ToggleAllCheckbox from './ToggleAllCheckBox';
 
 const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
@@ -22,6 +23,9 @@ const InputField = (context) => {
 			onKeyPress={ (evt) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
 			} }
+			InputLeftElement={
+				<ToggleAllCheckbox { ...context }/>
+			}
 			InputRightElement={
 				<ActionButton { ...context }/>
 			}
