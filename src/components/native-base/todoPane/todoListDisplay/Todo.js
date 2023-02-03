@@ -1,16 +1,18 @@
-import { Box, Center, Text } from 'native-base';
+import { Pressable, Text } from 'native-base';
 import { React } from 'react';
 
 const Todo = (context) => {
-	const { data } = context;
+	const { data, actions } = context;
 	const { id, todo } = data;
 
 	return (
-		<Center>
-			<Box key={ id }>
-				<Text>{todo}</Text>
-			</Box>
-		</Center>
+		<Pressable
+			key={ id }
+			py="4"
+			onPress={ () => actions.setEditing(data) }
+		>
+			<Text>{todo}</Text>
+		</Pressable>
 	);
 };
 

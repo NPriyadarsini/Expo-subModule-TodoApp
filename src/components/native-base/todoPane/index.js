@@ -1,4 +1,4 @@
-import { Center, VStack } from 'native-base';
+import { Box, Center, VStack } from 'native-base';
 import { React } from 'react';
 import TodoListDisplay from './todoListDisplay';
 import UserInputs from './userInputs';
@@ -8,7 +8,9 @@ const TodoPane = (context) => <VStack>
 		<UserInputs { ...context }/>
 	</Center>
 	<Center>
-		<TodoListDisplay { ...context }/>
+		<Box>
+			<TodoListDisplay { ...context }/>
+		</Box>
 	</Center>
 </VStack>;
 
