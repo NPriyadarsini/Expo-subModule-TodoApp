@@ -6,7 +6,7 @@ const AddButton = ({ actions }) =>
 		bgColor="blue.500"
 		onPress={ () => actions.addTodo() }
 	>
-		Save
+		ADD
 	</Button>;
 
 export default AddButton;
