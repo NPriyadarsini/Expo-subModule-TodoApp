@@ -7,6 +7,7 @@ const FilterBar = (context) => {
 
 	return (
 		<Button.Group
+			mt="2"
 			value={ state.filter }
 			onValueChange={ (value) => actions.setFilter(value) }
 			isAttached={ true }

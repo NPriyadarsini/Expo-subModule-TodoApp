@@ -10,8 +10,8 @@ const FilterButton = (context) => {
 		<Button
 			key={ name }
 			role="filterButton"
-			colorScheme="secondary"
-			variant="outline"
+			colorScheme="primary"
+			variant="solid"
 			disabled={ TodoManager.hasNoTodos(context) }
 			onPress={ () => actions.setFilter(name) }
 		>
