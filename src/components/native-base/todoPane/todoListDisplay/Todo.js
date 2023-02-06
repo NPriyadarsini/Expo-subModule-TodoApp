@@ -1,5 +1,6 @@
-import { HStack, Pressable, Text } from 'native-base';
+import { Box, HStack, Pressable, Text } from 'native-base';
 import { React } from 'react';
+import RemoveButton from './RemoveButton';
 import TodoCheckBox from './TodoCheckBox';
 
 const Todo = (context) => {
@@ -7,11 +8,14 @@ const Todo = (context) => {
 	const { id, todo } = data;
 
 	return (
-		<HStack key={ id } py="4">
+		<HStack key={ id } py="3">
 			<TodoCheckBox { ...context }/>
-			<Pressable onPress={ () => actions.setEditing(data) }>
-				<Text ml="5">{todo}</Text>
-			</Pressable>
+			<Box w="80%">
+				<Pressable onPress={ () => actions.setEditing(data) }>
+					<Text mx="2">{todo}</Text>
+				</Pressable>
+			</Box>
+			<RemoveButton { ...context }/>
 		</HStack>
 	);
 };
