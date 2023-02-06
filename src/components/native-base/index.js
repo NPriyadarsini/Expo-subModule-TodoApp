@@ -1,9 +1,10 @@
 /* eslint-disable max-lines-per-function */
 import * as React from 'react';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView } from 'react-native-tab-view';
 import { Dimensions, StatusBar, StyleSheet } from 'react-native';
-import { Box, NativeBaseProvider } from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 import TodoPane from './todoPane';
+import TaskPane from './taskPane';
 
 const styles = StyleSheet.create({
 	container: {
@@ -14,23 +15,16 @@ const styles = StyleSheet.create({
 	},
 });
 
+const scenes = {
+	TodoPane,
+	TaskPane,
+};
+
 const HomeScreen = (context) => {
 	const { state: { index }, config, actions } = context;
 	const routes = config.tabs;
 
-	// eslint-disable-next-line react/no-unstable-nested-components
-	const TodoPaneTab = () =>
-		<Box key={ index } style={ { flex: 1, backgroundColor: '#15d1c5' } }>
-			<TodoPane { ...context }/>
-		</Box>;
-
-	// eslint-disable-next-line react/no-unstable-nested-components
-	const TaskPaneTab = () =>
-		<Box style={ { flex: 1, backgroundColor: '#af87f5' } }/>;
-	const renderScene = SceneMap({
-		TodoPane: TodoPaneTab,
-		TaskPane: TaskPaneTab,
-	});
+	const renderScene = ({ route }) => scenes[route.key](context);
 
 	return (
 		<NativeBaseProvider>
