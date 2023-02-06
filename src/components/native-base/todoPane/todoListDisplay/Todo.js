@@ -9,9 +9,7 @@ const Todo = (context) => {
 	return (
 		<HStack key={ id } py="4">
 			<TodoCheckBox { ...context }/>
-			<Pressable
-				onPress={ () => actions.setEditing(data) }
-			>
+			<Pressable onPress={ () => actions.setEditing(data) }>
 				<Text ml="5">{todo}</Text>
 			</Pressable>
 		</HStack>
