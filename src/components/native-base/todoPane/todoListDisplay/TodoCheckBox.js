@@ -12,7 +12,7 @@ const TodoCheckBox = (context) => {
 			type="checkbox"
 			size="sm"
 			colorScheme="blue"
-			defaultIsChecked={ completed }
+			isChecked={ completed }
 			onChange={ () =>
 				actions.toggleTodo(data) }
 		/>);

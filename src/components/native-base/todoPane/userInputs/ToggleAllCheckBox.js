@@ -15,7 +15,7 @@ const ToggleAllCheckbox = (context) => {
 			ml="5"
 			colorScheme="blue"
 			type="checkbox"
-			defaultIsChecked={ selectAll }
+			isChecked={ selectAll }
 			onChange={ () => actions.toggleTodoList(!selectAll) }
 		/>
 	);
