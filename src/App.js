@@ -1,7 +1,13 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
+import TaskManager from '../MuiTodoApp/src/services/taskManager';
+import Ticker from '../MuiTodoApp/src/services/ticker';
 import HomeScreen from './components/native-base';
 
-const App = (context) =>
-	<HomeScreen { ...context }/>;
+const App = (context) => {
+	useEffect(() => TaskManager.init(context), []);
+	useEffect(() => Ticker.start(context), []);
+
+	return <HomeScreen { ...context }/>;
+};
 
 export default App;
