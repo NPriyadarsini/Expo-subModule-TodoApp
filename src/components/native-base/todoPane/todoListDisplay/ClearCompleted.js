@@ -9,9 +9,9 @@ const ClearCompleted = (context) => {
 	return (
 		<Button
 			mt="2"
-			colorScheme="secondary"
-			variant="outline"
-			size="sm"
+			colorScheme="primary"
+			variant="solid"
+			w="xs"
 			isDisabled={ !hasCompletedTodo }
 			onPress={ () =>	actions.getClearCompleted() }
 		>

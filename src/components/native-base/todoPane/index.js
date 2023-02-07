@@ -10,7 +10,7 @@ const TodoPane = (context) =>
 				<UserInputs { ...context }/>
 			</Center>
 			<Center>
-				<Box h="2xl">
+				<Box h="2xl" w="md" alignItems="center">
 					<TodoListDisplay { ...context }/>
 				</Box>
 			</Center>

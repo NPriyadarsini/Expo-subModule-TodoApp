@@ -5,7 +5,7 @@ import FilterBar from './FilterBar';
 import ClearCompleted from './ClearCompleted';
 
 const TodoListDisplay = (context) =>
-	<Box w="80%" h="90%" mt="5%">
+	<Box w="xs" h="lg" mt="5%">
 		<Center>
 			<Heading color="white">
 				<Text>TODOS</Text>
@@ -17,7 +17,7 @@ const TodoListDisplay = (context) =>
 				<TodoList { ...context }/>
 			</VStack>
 		</ScrollView>
-		<Box>
+		<Box alignItems="center">
 			<ClearCompleted { ...context }/>
 		</Box>
 	</Box>;
