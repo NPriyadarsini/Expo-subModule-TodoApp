@@ -3,17 +3,19 @@ import { React } from 'react';
 import TaskList from './TaskList';
 
 const TaskPane = (context) =>
-	<Box style={ { flex: 1, backgroundColor: '#af87f5' } }>
-		<Center>
-			<Heading color="white">
-				<Text>TASKS</Text>
+	<Box style={ { flex: 1, backgroundColor: '#bdf075' } }>
+	<Center>
+	<Box h="2xl" w="md" mt="10" alignItems="center">
+			<Heading color="white" >
+			<Text>TASKS</Text>
 			</Heading>
-		</Center>
 		<ScrollView my="2">
 			<VStack flex="1">
 				<TaskList { ...context }/>
 			</VStack>
 		</ScrollView>
+		</Box>
+		</Center>
 	</Box>;
 
 export default TaskPane;
