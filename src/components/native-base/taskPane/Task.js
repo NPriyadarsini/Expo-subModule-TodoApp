@@ -8,15 +8,15 @@ const Task = (context) => {
 	const { id, todo } = data;
 
 	return	(
-		<HStack key={ id } py="3" >
-		<AddButton {...context}/>
-		<Box w="65%">
-			<Pressable onPress={ () => actions.setEditing(data) }>
-				<Text mx="1">{todo}</Text>
-			</Pressable>
+		<HStack key={ id } py="3">
+			<AddButton { ...context }/>
+			<Box w="65%">
+				<Pressable onPress={ () => actions.setEditing(data) }>
+					<Text mx="1">{todo}</Text>
+				</Pressable>
 			</Box>
-			<RemoveButton {...context}/>
-			</HStack>
+			<RemoveButton { ...context }/>
+		</HStack>
 	);
 };
 

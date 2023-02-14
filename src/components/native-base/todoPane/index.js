@@ -4,7 +4,7 @@ import TodoListDisplay from './todoListDisplay';
 import UserInputs from './userInputs';
 
 const TodoPane = (context) =>
-	<Box style={ { flex: 1, backgroundColor: '#15d1c5' } }>
+	<Box style={ { flex: 1, backgroundColor: '#bdf075' } }>
 		<VStack>
 			<Center>
 				<UserInputs { ...context }/>

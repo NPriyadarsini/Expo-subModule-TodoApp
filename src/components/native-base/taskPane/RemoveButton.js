@@ -2,7 +2,6 @@ import { IconButton, Icon } from 'native-base';
 import { React } from 'react';
 import { Entypo } from 'react-native-vector-icons';
 
-
 const RemoveButton = (context) => {
 	const { actions, data } = context;
 
