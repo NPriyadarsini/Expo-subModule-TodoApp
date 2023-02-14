@@ -4,8 +4,12 @@ import Ticker from '../MuiTodoApp/src/services/ticker';
 import HomeScreen from './components/native-base';
 
 const App = (context) => {
-	useEffect(() => TaskManager.init(context), []);
-	useEffect(() => Ticker.start(context), []);
+	useEffect(() => {
+		TaskManager.init(context);
+	}, []);
+	useEffect(() => {
+		Ticker.start(context);
+	}, []);
 
 	return <HomeScreen { ...context }/>;
 };
