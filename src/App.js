@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import TaskManager from '../MuiTodoApp/src/services/taskManager';
 import Ticker from '../MuiTodoApp/src/services/ticker';
-import HomeScreen from './components/native-base';
+import HomeScreen from './components/native-paper';
 
 const App = (context) => {
 	useEffect(() => {
