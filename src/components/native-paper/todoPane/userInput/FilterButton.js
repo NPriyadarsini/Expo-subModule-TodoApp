@@ -1,4 +1,4 @@
-import TodoManager from '../../../../MuiTodoApp/src/services/todoManager';
+import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
 
 const FilterButton = (context) => {
 	const { data, actions } = context;

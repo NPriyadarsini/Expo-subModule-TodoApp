@@ -8,8 +8,9 @@ const ClearCompleted = (context) => {
 
 	return (
 		<Button
+			style={ { marginTop: 8 } }
 			role="clearCompleted"
-			variant="outlined"
+			mode="contained"
 			color="inherit"
 			size="small"
 			disabled={ !hasCompletedTodo }

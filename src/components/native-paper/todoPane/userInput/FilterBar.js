@@ -1,24 +1,20 @@
 import { React } from 'react';
 import { SegmentedButtons } from 'react-native-paper';
-import TodoManager from '../../../../../MuiTodoApp/src/services/todoManager';
+import FilterButton from './FilterButton';
 
 const FilterBar = (context) => {
-	const { config, state: { filter }, actions } = context;
+	const { config, state, actions } = context;
 
 	return (
 		<SegmentedButtons
-			value={ filter }
+			value={ state.filter }
 			onValueChange={ (value) => actions.setFilter(value) }
 			role="filterBar"
 			className="filter"
 			size="small"
 			buttons={
-				config.filters.map(({ name, label }) => (
-					{
-						value: name,
-						label: label,
-						disabled: TodoManager.hasNoTodos(context),
-					}))
+				config.filters.map((filter) =>
+					FilterButton({ ...context, data: filter }))
 			}
 		/>
 	);

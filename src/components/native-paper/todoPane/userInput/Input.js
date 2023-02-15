@@ -1,6 +1,7 @@
 import React from 'react';
 import { TextInput } from 'react-native-paper';
 import ActionButton from './ActionButton';
+import ToggleAllCheckbox from './ToggleAllCheckBox';
 
 const getEnterKeyAction = (context) =>
 	(context.state.editing ? 'editTodo' : 'addTodo');
@@ -23,6 +24,7 @@ const Input = (context) => {
 				actionKeys[evt.code] && actionKeys[evt.code](context);
 			} }
 			right={ ActionButton(context) }
+			left={ <ToggleAllCheckbox { ...context }/> }
 		/>
 	);
 };
